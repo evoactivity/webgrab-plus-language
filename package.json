@@ -2,7 +2,7 @@
     "name": "webgrab-plus-language",
     "displayName": "WebGrab+Plus Language",
     "description": "Syntax highlighting for WebGrab+Plus ini files",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "liampotter",
     "repository": {
         "type": "git",
