@@ -1,0 +1,30 @@
+{
+    "name": "webgrab-plus-language",
+    "displayName": "WebGrab+Plus Language",
+    "description": "Syntax highlighting for WebGrab+Plus ini files",
+    "version": "1.0.0",
+    "publisher": "liampotter",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wgini",
+            "aliases": ["WebGrab+Plus Ini", "wgini"],
+            "extensions": [".ini"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "wgini",
+            "scopeName": "source.ini",
+            "path": "./syntaxes/wgini.tmLanguage.json"
+        }]
+    }
+}

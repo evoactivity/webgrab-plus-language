@@ -1,0 +1,357 @@
+{
+  "scopeName": "source.ini",
+  "name": "WG++ siteini",
+  "fileTypes": [
+    "ini"
+  ],
+  "firstLineMatch": "^\\s*\\*[\\s*\\*]*WebGrab\\+Plus",
+  "patterns": [
+    {
+      "match": "(\\|)(urldate|channel|subpage|'title'|'credits'|'productiondate')(\\|)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.type.siteini"
+        },
+        "3": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "^(\\s*\\*[\\*\\s]*(@(Revision|MinSWversion|Site|Remarks)).*?)$",
+      "captures": {
+        "1": {
+          "name": "comment.block"
+        },
+        "2": {
+          "name": "comment.block.documentation"
+        }
+      }
+    },
+    {
+      "match": "^\\s*\\*.*$",
+      "name": "comment.siteini"
+		},
+		{
+			"match": "\\}(\\s*\\*.*)$",
+			"captures": {
+				"1": {
+					"name": "comment.siteini"
+				}
+			}
+    },
+    {
+      "match": "^\\s*(url_index|url_preload|index_urlshow|index_urlsubdetail|site|urldate|subpage|urlshow|urlsubdetail|url_primarysearch|url_mdb(_p[1-8])?|showsplit|date|start|stop|duration|(mdb_)?title(original)?|(index_)?temp_[1-9]|site_channel|site_id|sort_by|index_showsplit|index_date|index_start|index_stop|index_duration|index_title(original)?|(index|mdb)_variable_element|index_site_channel|index_site_id|index_sort_by|detail_urlshow|detail_urlsubdetail|detail_showsplit|detail_date|detail_start|detail_stop|detail_duration|detail_site_channel|detail_site_id|detail_sort_by|(index_|detail_|subdetail_|mdb_)?(title(original)?|subtitles?|description|director|actor|presenter|writer|producer|composer|commentator|rating(icon)?|category|productiondate|country|starrating(votes)?|episode(_id|numlist|titlelist)?|premiere|previousshown|videoaspect|videoquality|showicon|urlchannellogo|audiodescription)|previous_start|previous_stop|previous_duration|channel|urldate|now|showdate|config_(site_id|site_channel|xmltv_id|display_name|timespan_days|credentials_user|credentials_password)|global_temp_[1-9]|(previous_)?(index_|detail_|subdetail_|mdb_)?temp_[1-9]|mdb_(show_id|plot|commentsummary|review)|x_((sub)?title|productiondate|actor|director))",
+      "captures": {
+        "1": {
+          "name": "storage.type.siteini"
+        }
+      }
+    },
+    {
+      "match": "(['\"](url_index|url_preload|index_urlshow|index_urlsubdetail|site|urldate|subpage|urlshow|urlsubdetail|url_primarysearch|url_mdb(_p[1-8])?|showsplit|date|start|stop|duration|(mdb_)?title(original)?|(index_)?temp_[1-9]|site_channel|site_id|sort_by|index_showsplit|index_date|index_start|index_stop|index_duration|index_title(original)?|(index|mdb)_variable_element|index_site_channel|index_site_id|index_sort_by|detail_urlshow|detail_urlsubdetail|detail_showsplit|detail_date|detail_start|detail_stop|detail_duration|detail_site_channel|detail_site_id|detail_sort_by|(index_|detail_|subdetail_|mdb_)?(title(original)?|subtitles?|description|director|actor|presenter|writer|producer|composer|commentator|rating(icon)?|category|productiondate|country|starrating(votes)?|episode(_id|numlist|titlelist)?|premiere|previousshown|videoaspect|videoquality|showicon|urlchannellogo|audiodescription)|previous_start|previous_stop|previous_duration|channel|urldate|now|showdate|config_(site_id|site_channel|xmltv_id|display_name|timespan_days|credentials_user|credentials_password)|global_temp_[1-9]|(previous_)?(index_|detail_|subdetail_|mdb_)?temp_[1-9]|mdb_(show_id|plot|commentsummary|review)|x_((sub)?title|productiondate|actor|director))['\"])",
+      "captures": {
+        "2": {
+          "name": "storage.type.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\.(modify)(\\s*{\\s*(set|calculate|clear|cleanup|substring|remove|addstart|addend|single|replace|select))",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.siteini"
+        },
+        "3": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\.(scrub)\\s*{\\s*(regex|multi|single|url)?",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "[\\{\\|](method|customheader|accept|referer|contenttype|postdata|host|credentials|allowautoredirect|expect)\\s*=(POST(_BACK)?|GET|REST|SOAP)?",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "[\\{\\|](compression|subtitlestype|loadcookie|episodesystem|ratingsystem|url|timezone|maxdays|cultureinfo|charset|(title)?matchfactor|firstday|firstshow|retry|skip|langoverrule|mdbinitype|searchsite)\\s*=",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "[\\{\\|](allowlastdayoverflow|keepindexpage|nopageoverlaps|keeptabs)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\.(headers)\\s*",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\s*{\\s*(url)\\s*[\\(\\|]",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "(preload)\\s*=\\s*\".+?\"\\s*\\)\\s*\\|",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "[\\s+\\(](separator|span|step|count|pattern|target|tags|timespan|alloc|max|link|timezone)\\s*=",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "(removeduplicates|keepfirst|keeplast|force)=*(name(,\\d+)?|title(,\\d+)?|equal(,\\d+)?)?",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\((lang|system|role|src|width|height|start|channel)\\s*=",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "[\\s+\\(](style)=(sentence|name|upper|lower|regex|urlencode|urldecode|unidecode|uniencode|htmlencodespecialchar|htmldecodespecialchar|jsondecode|base64encode|base64decode(,decimal)?|sha256encode|md5encode|roman2arabicnumeral)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "[\\s+\\(](type)=(string|char|word|sentence|paragraph|element|regex|run)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "(format)=(chartodec|(utc)?date(,vba|,unix|,java|,ticks)?|(utc)?time(span,days|span,hours)?|productiondate|F\\d+|D\\d+)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\.(format)\\s*{\\s*(daycounter|date(string|number)|weekday(number|name)|letter|list|number)",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "(include|exclude)\\s*=\\s*(\\d+|first|last|\".+?\")(\\d+)?",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        },
+        "3": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "(includeblock|excludeblock)\\s*=\\s*((\\d+|'.+?')(/\\d+|/'.+?')?|\".+?\")",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        },
+        "3": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "('(S|St|E|Et|P|Pt)[01]')",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "(scope)\\s*=\\s*(urlindex|datelogo|splitindex|indexshowdetails|showdetails|showsubdetails|channellist|primarysearch|match|getelements)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "(scope\\.range)\\s*{\\s*\\((urlindex|datelogo|splitindex|indexshowdetails|showdetails|showsubdetails|channellist|primarysearch|match|getelements)\\s*\\)\\s*\\|\\s*(end|\\d+)\\s*}",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        },
+        "3": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "(end_scope(\\.range)?)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "(debug)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\.(modify)(\\s*{\\s*\\((debug)\\))",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.siteini"
+        },
+        "3": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "^\\s*(loop)\\s*{\\s*\\(\\s*(each\\s*\".+?\"|'.+?')\\s*(in|<|>|=<|=>|<=|>=|not)?\\s*('.+?'|\".*?\")\\s*(.*?)?\\)\\s*\\|(end|\\d+)}",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.function.siteini"
+        },
+        "3": {
+          "name": "storage.type.siteini"
+        },
+        "4": {
+          "name": "entity.name.function.siteini"
+        },
+        "5": {
+          "name": "storage.type.siteini"
+        },
+        "6": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "^\\s*(end_loop)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    },
+    {
+      "match": "\\.(modify)\\s*{(sort)\\((ascending|descending),(string|integer|datetime)\\)",
+      "captures": {
+        "1": {
+          "name": "entity.name.type.siteini"
+        },
+        "2": {
+          "name": "entity.name.tag.siteini"
+        },
+        "3": {
+          "name": "entity.name.function.siteini"
+        },
+        "4": {
+          "name": "entity.name.function.siteini"
+        }
+      }
+    },
+    {
+      "match": "(\\|)(urldate|channel|subpage|'title'|'credits'|'productiondate')(\\|)",
+      "captures": {
+        "1": {
+          "name": "entity.name.tag.siteini"
+        },
+        "2": {
+          "name": "entity.name.type.siteini"
+        },
+        "3": {
+          "name": "entity.name.tag.siteini"
+        }
+      }
+    }
+  ]
+}
